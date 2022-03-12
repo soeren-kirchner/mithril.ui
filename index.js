@@ -1,6 +1,6 @@
 // taken from https://github.com/sindresorhus/html-tags
 const elements = [ "a", "abbr", "address", "area", "article", "aside", "audio", "b", "base", "bdi", "bdo", "blockquote", "body", "br", "button", "canvas", "caption", "cite", "code", "col", "colgroup", "data", "datalist", "dd", "del", "details", "dfn", "dialog", "div", "dl", "dt", "em", "embed", "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html", "i", "iframe", "img", "input", "ins", "kbd", "label", "legend", "li", "link", "main", "map", "mark", "math", "menu", "menuitem", "meta", "meter", "nav", "noscript", "object", "ol", "optgroup", "option", "output", "p", "param", "picture", "pre", "progress", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp", "script", "section", "select", "slot", "small", "source", "span", "strong", "style", "sub", "summary", "sup", "svg", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "title", "tr", "track", "u", "ul", "var", "video", "wbr"]
-const events = ["onmouseover", "onclick", "style", "id", "active", "title", "disabled"]
+const events = ["onmouseover", "onclick", "onload", "style", "id", "active", "title", "disabled", "href", "src", "alt", "target"]
 
 function cls(def, separator=' ') {
     let classes
@@ -10,6 +10,10 @@ function cls(def, separator=' ') {
         }
     }
     return classes || ''
+}
+
+function call (...args) {
+    return () => {args[0](...args.slice(1))}
 }
 
 for (const element of elements) {
@@ -31,6 +35,7 @@ for (const element of elements) {
                 return inner(elementName, { ...attrs, ...code}, ...arg)
             }
             f.cls = clsObj => inner(elementName, { ...attrs, className: cls(clsObj)}, ...arg)
+            f.condClass = f.cls
             for (const event of events) {
                 f[event] = function(code) {
                     return inner(elementName, {...attrs, [event]: code}, ...arg)
