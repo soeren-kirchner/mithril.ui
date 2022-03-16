@@ -10,8 +10,8 @@ var miniapp = function () {
     }
 
     return {
-        view: function view () {
-            return div(
+        view: () =>
+            div(
                 nav(
                     div("≡")
                         .class("sandwich")
@@ -35,9 +35,7 @@ var miniapp = function () {
                 )
             )
             .class("miniapp")
-        },
-    }
+        }
 };
 
-var root = document.body;
-m.mount(root, miniapp);
+m.mount(document.body, miniapp);
