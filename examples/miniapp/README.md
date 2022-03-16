@@ -1,1 +1,1 @@
-[[miniapp.gif||width=200px]]
+<img src="miniapp.gif" width="300">
