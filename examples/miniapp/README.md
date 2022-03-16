@@ -1,1 +1,1 @@
-![Mini App](miniapp.gif)
+[[miniapp.gif||width=200px]]
