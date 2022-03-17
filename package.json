@@ -4,10 +4,12 @@
   "description": "mithril.ui is a kind of extension to the modern and sophisticated [Mithril](https://mithril.js.org) Framework.",
   "main": "global.js",
   "directories": {},
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {},
-  "scripts": {},
+  "devDependencies": {
+    "esbuild": "0.14.27"
+  },
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --outdir=dist"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/soeren-kirchner/mithril.ui.git"

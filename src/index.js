@@ -14,7 +14,7 @@ function cls(def, separator = " ") {
     return classes || ""
 }
 
-function call(...args) {
+window.call = function call(...args) {
     return () => {
         args[0](...args.slice(1))
     }
