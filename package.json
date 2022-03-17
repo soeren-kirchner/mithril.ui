@@ -1,0 +1,25 @@
+{
+  "name": "mithril.ui",
+  "version": "0.1.0",
+  "description": "mithril.ui is a kind of extension to the modern and sophisticated [Mithril](https://mithril.js.org) Framework.",
+  "main": "global.js",
+  "directories": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soeren-kirchner/mithril.ui.git"
+  },
+  "keywords": [
+    "mithril",
+    "ui"
+  ],
+  "author": "sk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soeren-kirchner/mithril.ui/issues"
+  },
+  "homepage": "https://github.com/soeren-kirchner/mithril.ui#readme"
+}
